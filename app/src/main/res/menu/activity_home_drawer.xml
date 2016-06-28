@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_overview"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Overview" />
+        <item
+            android:id="@+id/nav_wifi"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="WiFi" />
+        <item
+            android:id="@+id/nav_portforward"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Port Forwarding" />
+        <item
+            android:id="@+id/nav_tools"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Tools" />
+    </group>
+</menu>
