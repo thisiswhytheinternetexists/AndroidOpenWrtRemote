@@ -3,6 +3,7 @@ package com.thisiswhytheinternetexists.openwrtmanager;
 /**
  * Created by flix on 28/06/16.
  */
+import android.support.v4.util.Pair;
 import android.util.Log;
 
 import java.io.BufferedReader;
@@ -14,6 +15,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.List;
 
 public class HttpUtils {
 
@@ -22,11 +24,12 @@ public class HttpUtils {
             HttpURLConnection conn = (HttpURLConnection)new URL(url).openConnection();
             conn.setRequestMethod("GET");
             conn.connect();
-            return conn.getResponseCode();
+            int v = conn.getResponseCode();
+            return v;
         } catch (IOException e) {
             Log.e("OpenWRT Manager", e.getMessage());
+            return -1;
         }
-        return -1;
     }
 
     public static String getContents(String url, String token) {
