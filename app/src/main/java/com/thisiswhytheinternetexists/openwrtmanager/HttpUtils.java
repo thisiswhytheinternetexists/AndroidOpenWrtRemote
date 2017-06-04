@@ -29,11 +29,12 @@ public class HttpUtils {
         return -1;
     }
 
-    public static String getContents(String url) {
+    public static String getContents(String url, String token) {
         String contents ="";
 
         try {
             URLConnection conn = new URL(url).openConnection();
+            conn.setRequestProperty("Cookie", token);
 
             InputStream in = conn.getInputStream();
             contents = convertStreamToString(in);
@@ -53,7 +54,7 @@ public class HttpUtils {
         String line = null;
         try {
             while ((line = reader.readLine()) != null) {
-                sb.append(line + "n");
+                sb.append(line);
             }
         } catch (IOException e) {
             e.printStackTrace();
